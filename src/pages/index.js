@@ -42,6 +42,8 @@ export default function Home() {
     if (emailInput === "admin@gmail.com" && passwordInput === passSekretaris) {
       alert("Login berhasil");
       router.push('/form');
+    } else if (emailInput === "" && passwordInput === ""){
+      alert("Harap mengisi email dan pasword");
     } else {
       alert("Email atau Password Salah!!!");
     }
