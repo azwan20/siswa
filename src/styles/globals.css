@@ -1,0 +1,115 @@
+:root {
+  --primary-color: #6AD4DD;
+  --secondary-color: #fff9bc;
+  --third-color: #fff9bc;
+  --four-color: #fff9bc;
+  --five-color: #f3f4f6;
+}
+
+nav {
+  height: 10%;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+nav a {
+  color: #fff !important;
+  margin-right: 1rem;
+}
+
+.home {
+  width: 100%;
+  height: 100vh;
+}
+
+.halLog {
+  background-color: var(--five-color);
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  width: 35%;
+  height: 50%;
+  background-color: #fff;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.login input {
+  width: 100%;
+  height: 40px;
+}
+
+.login button {
+  background-color: var(--primary-color);
+  color: #fff;
+  width: 100%;
+  border: none;
+  height: 50px;
+}
+
+.login p {
+  margin: 10px 0 5px;
+}
+
+.login section {
+  margin: 0px 0 20px;
+}
+
+.formulir,
+.dataSiswa {
+  width: 80%;
+  background-color: #fff;
+  max-height: 90%;
+  overflow-y: auto;
+  padding: 20px 40px;
+}
+
+.formulir p,
+.dataSiswa p {
+  margin: 0 0 5px;
+}
+
+.formulir input,
+.formulir select,
+.dataSiswa input,
+.dataSiswa select {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 16px;
+  border: 1px solid rgb(194, 193, 193);
+  outline: none;
+  border-radius: 5px;
+}
+
+.formulir h3 {
+  margin: 20px 0 30px;
+}
+
+.formulir button {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  width: 200px;
+  height: 50px;
+}
+
+.dataSiswa span {
+  width: 25%;
+  padding: 0 10px;
+}
+
+.dataSiswa button{
+  width: 100px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+}
