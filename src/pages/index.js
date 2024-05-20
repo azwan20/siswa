@@ -51,8 +51,8 @@ export default function Home() {
   return (
     <>
       <div className="home">
-        <Navbar />
         <div className="halLog">
+        <h1 className="text-uppercase mb-5">TK Tunas Talenta Tanjung Tobaku</h1>
           <div className="login d-flex">
             <h1>Login</h1>
             <section>
