@@ -1,6 +1,6 @@
 import Navbar from "./navbar";
 import { db } from "../../public/firebaseConfig";
-import { getDocs, collection, updateDoc, doc } from "firebase/firestore";
+import { getDocs, collection, updateDoc, deleteDoc, doc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -67,6 +67,24 @@ export default function DataSiswa() {
         alert("Data berhasil di Update");
     };
 
+    const handleDeleteClick = async () => {
+        if (formData.id) {
+            const docRef = doc(db, "data_siswa", formData.id);
+            await deleteDoc(docRef);
+            setIsEditMode(false);
+            const updatedData = await fetchDataFromFirestore();
+            setDataSurat(updatedData);
+            setSelectedNama('');
+            setFormData({});
+            alert("Data berhasil di Hapus");
+        }
+    };
+
+    const handleBatal = () =>{
+        setIsEditMode(false);
+    }
+
+
     const handleDetailTransaksi = (id) => {
         router.push(`/print/${id}`);
     };
@@ -81,9 +99,10 @@ export default function DataSiswa() {
                         <section className="navbar align-items-center">
                             <button onClick={handleEditClick}>Edit</button>
                             <select
-                                style={{ width: '20%', margin: 'auto' }}
+                                style={{ width: '20%', margin: 'auto', border: '3px solid #6AD4DD'}}
                                 value={selectedNama}
                                 onChange={handleNamaChange}
+                                className="px-1"
                             >
                                 <option value="">Pilih Nama</option>
                                 {dataSurat.map((item, index) => (
@@ -91,9 +110,14 @@ export default function DataSiswa() {
                                 ))}
                             </select>
                             {isEditMode ? (
-                                <button onClick={handleSaveClick}>Simpan</button>
+                                <span className="text-end" style={{width:'35%'}}>
+                                <button onClick={handleBatal}>Batal</button>
+                                    <button className="mx-2" onClick={handleSaveClick}>Simpan</button>
+                                    <button className="bg-danger" onClick={handleDeleteClick}>Hapus</button>
+                                    
+                                </span>
                             ) : (
-                                    <button className="buatSurat" onClick={() => handleDetailTransaksi(formData.id)}>Cetak</button>
+                                <button className="buatSurat" onClick={() => handleDetailTransaksi(formData.id)}>Cetak</button>
                             )}
                         </section>
                         <hr />
@@ -175,8 +199,8 @@ export default function DataSiswa() {
                                         <p>Tinggal Bersama</p>
                                         <input
                                             type="text"
-                                            name="tinggal_bersama"
-                                            value={formData.tinggal_bersama || ''}
+                                            name="tinggalBersama"
+                                            value={formData.tinggalBersama || ''}
                                             onChange={handleInputChange}
                                             readOnly={!isEditMode}
                                         />
@@ -393,8 +417,8 @@ export default function DataSiswa() {
                             </section>
                         ) : (
                             <div className="text-center">
-                            <h5>Selamat datang pada halaman data siswa</h5>
-                            <p>Silakan pilih nama untuk melihat detailnya</p>
+                                <h5>Selamat datang pada halaman data siswa</h5>
+                                <p>Silakan pilih nama untuk melihat detailnya</p>
                             </div>
                         )}
                         <hr />

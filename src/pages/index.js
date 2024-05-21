@@ -42,7 +42,7 @@ export default function Home() {
     if (emailInput === "admin@gmail.com" && passwordInput === passSekretaris) {
       alert("Login berhasil");
       router.push('/form');
-    } else if (emailInput === "" && passwordInput === ""){
+    } else if (emailInput === "" && passwordInput === "") {
       alert("Harap mengisi email dan pasword");
     } else {
       alert("Email atau Password Salah!!!");
@@ -51,8 +51,8 @@ export default function Home() {
   return (
     <>
       <div className="home">
-        <div className="halLog">
-        <h1 className="text-uppercase mb-5">TK Tunas Talenta Tanjung Tobaku</h1>
+      <div className="halLog" style={{ background: 'linear-gradient(to bottom right, #524bdf, #00c6ff)', height: '100%' }}>
+          <h1 className="text-uppercase mb-5">TK Tunas Talenta Tanjung Tobaku</h1>
           <div className="login d-flex">
             <h1>Login</h1>
             <section>

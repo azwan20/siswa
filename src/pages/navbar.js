@@ -17,6 +17,9 @@ export default function Navbar() {
                             <li>
                                 <Link class="nav-link active" aria-current="page" href="/dataSiswa">Edit Data</Link>
                             </li>
+                            <li>
+                                <Link class="nav-link bg-danger rounded" aria-current="page" href="/">Logout</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

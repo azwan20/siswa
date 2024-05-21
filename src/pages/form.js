@@ -169,7 +169,7 @@ export default function Form() {
                                 <input type="text" onChange={(e) => setKewarganegaraan(e.target.value)} />
                                 <p>Alamat Lengkap</p>
                                 <input type="text" onChange={(e) => setAlamat(e.target.value)} />
-                                <p>Tinggi Bersama</p>
+                                <p>Tinggal Bersama</p>
                                 <input type="text" onChange={(e) => setTinggalBersama(e.target.value)} />
                                 <p>Anak Ke</p>
                                 <input type="text" onChange={(e) => setAnakKe(e.target.value)} />
