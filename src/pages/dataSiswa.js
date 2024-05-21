@@ -419,6 +419,7 @@ export default function DataSiswa() {
                             <div className="text-center">
                                 <h5>Selamat datang pada halaman data siswa</h5>
                                 <p>Silakan pilih nama untuk melihat detailnya</p>
+                                <p>Saat ini siswa yang terdaftar sebanyak <b>{dataSurat.length}</b></p>
                             </div>
                         )}
                         <hr />

@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 async function addDataToFirebase(nama_lengkap, jenis_kelamin, nik, tempat_lahir, tanggal_lahir, agama, kewarganegaraan, alamat, tinggalBersama, anakKe, usia, no_hp, nama_ayah,
     nik_ayah, tahun_lahir, pendidikan, pekerjaan, nama_ibu, nik_ibu, tahun_lahir_ibu, pendidikan_ibu, pekerjaan_ibu, tb, bb, jarak_tempuh, saudara, jenis_pendaftaran, tanggal_masuk, nis, rombel,
 ) {
-    console.log("state 1")
     try {
         const docRefSurat = await addDoc(collection(db, "data_siswa"), {
             nama_lengkap: nama_lengkap,
